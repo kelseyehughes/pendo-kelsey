@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PendoElement - Lunch</title>
+  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+  <script src="https://unpkg.com/element-ui/lib/umd/locale/en.js"></script>
+</head>
+<body>
+  <div id="app">
+
+
+    <el-card>
+      <el-row :gutter="10">
+        <el-col :xs="24" :sm="8" :md="8" :lg="8" :xl="8">
+          <el-alert
+          title="billy"
+          type="error">
+        </el-alert>
+      </el-col>
+      <el-col :xs="24" :sm="8" :md="8" :lg="8" :xl="8">
+        <el-alert
+        title="kelsey rather long here"
+        type="success">
+      </el-alert>
+    </el-col>
+    <el-col :xs="24" :sm="8" :md="8" :lg="8" :xl="8">
+      <el-alert
+      title="matthew"
+      type="info">
+    </el-alert>
+  </el-col>
+</el-row>
+
+
+
+
+</el-card>
+
+</app>
+<script>
+ELEMENT.locale(ELEMENT.lang.en)
+var Main = {
+  data() {
+    return {
+
+    }
+  }
+};
+var Ctor = Vue.extend(Main)
+new Ctor().$mount('#app');
+</script>
+</body>
+</html>
