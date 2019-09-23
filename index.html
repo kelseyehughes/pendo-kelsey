@@ -72,7 +72,17 @@
 
 
 </el-card>
+<script>
+ELEMENT.locale(ELEMENT.lang.en)
+var Main = {
+  data() {
+    return {
 
-</app>
+    }
+  }
+};
+var Ctor = Vue.extend(Main)
+new Ctor().$mount('#app');
+</script>
 </body>
 </html>
