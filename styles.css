@@ -37,10 +37,7 @@ padding-left:16px;
     color: #016479;
 }
 
-.el-menu--horizontal>.el-menu-item.is-active {
-    border-bottom:2px solid #128297;
-    color:#2a2c35;
-}
+
 
 
 .el-timeline {
@@ -75,4 +72,9 @@ body {
 a {
     text-decoration:none;
     vertical-align:none;
+}
+
+a:hover {
+    border-bottom:2px solid #128297;
+    color:#2a2c35;
 }
