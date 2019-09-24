@@ -49,9 +49,9 @@
 
       <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
           <el-menu-item><img src="pendo-kelsey.svg"></el-menu-item>
-          <el-menu-item index="1"><a href="index.html">Dashboard</a></el-menu-item>
-          <el-menu-item index="2" class="is-active"><a href="workspace.html">Workspace</a></el-menu-item>
-          <el-menu-item index="3"><a href="index.html">Settings</a></el-menu-item>
+          <a href="index.html" class="el-menu-item">Dashboard</a>
+          <a href="workspace.html" class="is-active el-menu-item" index="2">Workspace</a>
+          <a href="index.html" class="el-menu-item" index="3">Settings</a>
           <div style="float:right;padding-top:16px; padding-right:32px;">  
             <el-avatar :size="30" style="font-size:14px; background:#ffffff; color:#babcc5; border:1px solid #dadce5;" icon="el-icon-user-solid"></el-avatar>
             </div>
