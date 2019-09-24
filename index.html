@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>PendoElement - Lunch</title>
+  <title>pendo-kelsey</title>
+  <link rel="shortcut icon" type="image/png" href="yellow-circle.png"/>
   <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
   <link rel="stylesheet" type="text/css" href="./styles.css">
   <script src="./kelsey.js"></script>
@@ -45,33 +46,131 @@
 <body>
   <div id="app">
 
- <p>watttuppp im kelseuy</p>
+
+      <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
+          <el-menu-item><img src="pendo-kelsey.svg"></el-menu-item>
+          <el-menu-item index="1">Dashboard</el-menu-item>
+          <el-menu-item index="2">Workspace</el-menu-item>
+          <el-menu-item index="3">Settings</el-menu-item>
+          <div style="float:right;padding-top:16px; padding-right:32px;">  
+            <el-avatar :size="30" style="font-size:14px; background:#ffffff; color:#babcc5; border:1px solid #dadce5;" icon="el-icon-user-solid"></el-avatar>
+            </div>
+        </el-menu>
+
+
+            
+<div class="site-margin">
+
+
+  <el-row :gutter="16">
+            <el-col :xs="24" :sm="8" :md="8" :lg="8" :xl="8">
     <el-card>
-      <el-row :gutter="10">
-        <el-col :xs="24" :sm="8" :md="8" :lg="8" :xl="8">
-          <el-alert
-          title="billy"
-          type="error">
-        </el-alert>
-      </el-col>
-      <el-col :xs="24" :sm="8" :md="8" :lg="8" :xl="8">
-        <el-alert
-        title="kelsey rather long here"
-        type="success">
-      </el-alert>
-    </el-col>
+        <div slot="header" class="clearfix">
+            <span>Daily</span>
+            <el-button style="float: right; padding: 3px 0" type="text">View Details ›</el-button>
+          </div>
+        <center>
+        <el-progress type="circle" :percentage="25"></el-progress>
+        </center>
+    </el-card>
+            </el-col>
+
     <el-col :xs="24" :sm="8" :md="8" :lg="8" :xl="8">
-      <el-alert
-      title="matthew"
-      type="info">
-    </el-alert>
-  </el-col>
-</el-row>
+                <el-card>
+                    <div slot="header" class="clearfix">
+                        <span>Weekly</span>
+                        <el-button style="float: right; padding: 3px 0" type="text">View Details ›</el-button>
+                      </div>
+                  <center>
+                    <el-progress type="circle" :percentage="50"></el-progress>
+                  </center>
+                </el-card>
+                        </el-col>
 
+      <el-col :xs="24" :sm="8" :md="8" :lg="8" :xl="8">
+                            <el-card>
+                                <div slot="header" class="clearfix">
+                                    <span>Monthly</span>
+                                    <el-button style="float: right; padding: 3px 0" type="text">View Details ›</el-button>
+                                  </div>
+                                  <center>
+                                <el-progress type="circle" :percentage="75"></el-progress>
+                                  </center>
+                            </el-card>
+                                    </el-col>
+  </el-row>
 
+ 
 
-
+<el-row :gutter="16" style="margin-top:16px;">
+    <el-col :xs="24" :sm="16" :md="16" :lg="16" :xl="16">
+      <el-card>
+          
+              <div slot="header" class="clearfix">
+                  <span>My Table</span></div>
+    
+      <el-table style="width: 100%; height:500px;">
+        <el-table-column
+          label="Date"
+           width="180">
+           <tr>
+             <th>test</th>
+           </tr>
+    </el-table-column>
+    <el-table-column
+      label="Name"
+      width="180">
+    </el-table-column>
+    <el-table-column
+      label="Status">
+    </el-table-column>
+  </el-table>
 </el-card>
+    </el-col>
+
+
+      <el-col :xs="24" :sm="8" :md="8" :lg="8" :xl="8">
+<el-card>
+    <div slot="header" class="clearfix">
+        <span>Recent Activity</span>
+        <el-button style="float: right; padding: 3px 0" type="text">Full History ›</el-button>
+      </div>
+    <div class="block">
+        <el-timeline>
+          <el-timeline-item>
+            <el-card>
+              <p class="timeline-card">Workspace Updated</p>
+              <p class="timeline-date" style="color:#9a9ca5; font-size:12px;">9/20/2019 4:00pm</p>
+            </el-card>
+          </el-timeline-item>
+          <el-timeline-item>
+            <el-card>
+                <p class="timeline-card">Workspace Duplicated</p>
+                <p class="timeline-date" style="color:#9a9ca5; font-size:12px;">9/20/2019 2:00pm</p>
+              </el-card>
+          </el-timeline-item>
+          <el-timeline-item>
+            <el-card>
+                <p class="timeline-card">Workspace Created</p>
+                <p class="timeline-date" style="color:#9a9ca5; font-size:12px;">9/18/2019 9:00am</p>
+              </el-card>
+          </el-timeline-item>
+        </el-timeline>
+      </div>
+</el-card>
+      </el-col>
+</el-row>
+</div>
+
+
+
+</div>
+
+
+
+
+
+
 <script>
 ELEMENT.locale(ELEMENT.lang.en)
 var Main = {
@@ -84,5 +183,9 @@ var Main = {
 var Ctor = Vue.extend(Main)
 new Ctor().$mount('#app');
 </script>
+
+
+  
+
 </body>
 </html>
