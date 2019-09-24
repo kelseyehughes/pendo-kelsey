@@ -67,3 +67,11 @@ padding-left:16px;
 body {
     margin:0px;
 }
+
+.el-progress-bar__inner {
+    background-color:#babcc5;
+}
+
+a {
+    text-decoration:none;
+}

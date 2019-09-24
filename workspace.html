@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>pendo-kelsey</title>
+  <link rel="shortcut icon" type="image/png" href="yellow-circle.png"/>
+  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+  <link rel="stylesheet" type="text/css" href="./styles.css">
+  <script src="./kelsey.js"></script>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+  <script src="https://unpkg.com/element-ui/lib/umd/locale/en.js"></script>
+  <script>
+      (function(apiKey){
+          (function(p,e,n,d,o){var v,w,x,y,z;o=p[d]=p[d]||{};o._q=[];
+          v=['initialize','identify','updateOptions','pageLoad'];for(w=0,x=v.length;w<x;++w)(function(m){
+              o[m]=o[m]||function(){o._q[m===v[0]?'unshift':'push']([m].concat([].slice.call(arguments,0)));};})(v[w]);
+              y=e.createElement(n);y.async=!0;y.src='https://pendo-dev-static.storage.googleapis.com/agent/static/'+apiKey+'/pendo.js';
+              z=e.getElementsByTagName(n)[0];z.parentNode.insertBefore(y,z);})(window,document,'script','pendo');
+
+              var url = window.location.search;
+              var queryString = {};
+              // from https://stevenbenner.com/2010/03/javascript-regex-trick-parse-a-query-string-into-an-object/
+              url.replace(
+                  new RegExp("([^?=&]+)(=([^&]*))?", "g"),
+                  function ($0, $1, $2, $3) {
+                      queryString[$1] = $3;
+                  }
+              );
+
+              pendo.initialize({
+                  visitor: {
+                      id: queryString.visitor || 'testuser@pendo',
+                      user_id: 1
+                  },
+                  apiKey: 'aa9ec73a-4ebc-40e0-6ded-8b3169ab6931',
+                  account: {
+                      id: 12345,
+                      city: 'Raleigh',
+                      zipCode: '27601'
+                  }
+              });
+      })('aa9ec73a-4ebc-40e0-6ded-8b3169ab6931');
+  </script>
+</head>
+<body>
+  <div id="app">
+
+
+      <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
+          <el-menu-item><img src="pendo-kelsey.svg"></el-menu-item>
+          <el-menu-item index="1"><a href="index.html">Dashboard</a></el-menu-item>
+          <el-menu-item index="2" class="is-active">Workspace</el-menu-item>
+          <el-menu-item index="3">Settings</el-menu-item>
+          <div style="float:right;padding-top:16px; padding-right:32px;">  
+            <el-avatar :size="30" style="font-size:14px; background:#ffffff; color:#babcc5; border:1px solid #dadce5;" icon="el-icon-user-solid"></el-avatar>
+            </div>
+        </el-menu>
+
+
+            
+<div class="site-margin">
+                  <el-card>
+                        <el-row :gutter="16">
+        <el-col :xs="8" :sm="8" :md="8" :lg="8" :xl="8">
+                <el-input
+    placeholder="Type something"
+    prefix-icon="el-icon-search"
+    v-model="input2">
+  </el-input>
+        </el-col>
+        </el-row>
+    </el-card>
+
+<el-row :gutter="16" style="margin-top:16px;">
+    <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
+      <el-card>
+              <div slot="header" class="clearfix">
+                  <span>My Table</span></div>
+                  <el-collapse v-model="activeNames" @change="handleChange">
+                        
+
+                        <el-collapse-item title="Consistency" name="1">
+                          <div>Consistent with real life: in line with the process and logic of real life, and comply with languages and habits that the users are used to;</div>
+                          <div>Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc.</div>
+                        </el-collapse-item>
+                        <el-collapse-item title="Feedback" name="2">
+                          <div>Operation feedback: enable the users to clearly perceive their operations by style updates and interactive effects;</div>
+                          <div>Visual feedback: reflect current state by updating or rearranging elements of the page.</div>
+                        </el-collapse-item>
+                        <el-collapse-item title="Efficiency" name="3">
+                          <div>Simplify the process: keep operating process simple and intuitive;</div>
+                          <div>Definite and clear: enunciate your intentions clearly so that the users can quickly understand and make decisions;</div>
+                          <div>Easy to identify: the interface should be straightforward, which helps the users to identify and frees them from memorizing and recalling.</div>
+                        </el-collapse-item>
+                        <el-collapse-item title="Controllability" name="4">
+                          <div>Decision making: giving advices about operations is acceptable, but do not make decisions for the users;</div>
+                          <div>Controlled consequences: users should be granted the freedom to operate, including canceling, aborting or terminating current operation.</div>
+                        </el-collapse-item>
+                       
+                      </el-collapse>
+</el-card>
+    </el-col>
+</el-row>
+
+<el-row :gutter="16" style="margin-top:16px;">
+        <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
+          <el-card>
+                  <div slot="header" class="clearfix">
+                      <span>My Table</span></div>
+                      <el-collapse v-model="activeNames" @change="handleChange">
+                            
+    
+                            <el-collapse-item title="Consistency" name="1">
+                              <div>Consistent with real life: in line with the process and logic of real life, and comply with languages and habits that the users are used to;</div>
+                              <div>Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc.</div>
+                            </el-collapse-item>
+                            <el-collapse-item title="Feedback" name="2">
+                              <div>Operation feedback: enable the users to clearly perceive their operations by style updates and interactive effects;</div>
+                              <div>Visual feedback: reflect current state by updating or rearranging elements of the page.</div>
+                            </el-collapse-item>
+                            <el-collapse-item title="Efficiency" name="3">
+                              <div>Simplify the process: keep operating process simple and intuitive;</div>
+                              <div>Definite and clear: enunciate your intentions clearly so that the users can quickly understand and make decisions;</div>
+                              <div>Easy to identify: the interface should be straightforward, which helps the users to identify and frees them from memorizing and recalling.</div>
+                            </el-collapse-item>
+                            <el-collapse-item title="Controllability" name="4">
+                              <div>Decision making: giving advices about operations is acceptable, but do not make decisions for the users;</div>
+                              <div>Controlled consequences: users should be granted the freedom to operate, including canceling, aborting or terminating current operation.</div>
+                            </el-collapse-item>
+                            <el-collapse-item title="Controllability" name="4">
+                                    <div>Decision making: giving advices about operations is acceptable, but do not make decisions for the users;</div>
+                                    <div>Controlled consequences: users should be granted the freedom to operate, including canceling, aborting or terminating current operation.</div>
+                                  </el-collapse-item>
+                                  <el-collapse-item title="Controllability" name="4">
+                                        <div>Decision making: giving advices about operations is acceptable, but do not make decisions for the users;</div>
+                                        <div>Controlled consequences: users should be granted the freedom to operate, including canceling, aborting or terminating current operation.</div>
+                                      </el-collapse-item>
+                          </el-collapse>
+    </el-card>
+        </el-col>
+    </el-row>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+<script>
+ELEMENT.locale(ELEMENT.lang.en)
+var Main = {
+  data() {
+    return {
+
+    }
+  }
+};
+var Ctor = Vue.extend(Main)
+new Ctor().$mount('#app');
+</script>
+
+
+  
+
+</body>
+</html>
